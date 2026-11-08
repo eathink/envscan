@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "envscan"
+version = "0.1.0"
+description = "扫描工作区中的 .env 与疑似密钥，标出是否已被 git 跟踪"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "eathink" }]
+keywords = ["secrets", "security", "env", "scan", "git", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Security",
+    "Topic :: Utilities",
+]
+
+[project.scripts]
+envscan = "envscan.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/eathink/envscan"
+
+[tool.setuptools.packages.find]
+where = ["src"]
